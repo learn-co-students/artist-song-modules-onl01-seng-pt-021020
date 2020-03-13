@@ -6,8 +6,14 @@ class Artist
 
   @@artists = []
 
+  #extend self.reset_all
+  #extend self.count
+
+  extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
+
   def initialize
-    @@artists << self
+    super
     @songs = []
   end
 
@@ -19,13 +25,13 @@ class Artist
     @@artists
   end
 
-  def self.reset_all
-    self.all.clear
-  end
+  # def self.reset_all
+  #   self.all.clear
+  # end
 
-  def self.count
-    self.all.count
-  end
+  # def self.count
+  #   self.all.count
+  # end
 
   def add_song(song)
     @songs << song
