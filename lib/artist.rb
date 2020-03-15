@@ -1,6 +1,8 @@
+require_relative './memorable.rb'
 require 'pry'
 
 class Artist
+  
   attr_accessor :name
   attr_reader :songs
 
@@ -39,4 +41,6 @@ class Artist
   def to_param
     name.downcase.gsub(' ', '-')
   end
+  
+  extend Memorable
 end
