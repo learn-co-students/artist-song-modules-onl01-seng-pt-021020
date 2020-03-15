@@ -8,10 +8,10 @@ class Song
   attr_reader :artist
 
   @@songs = []
-
+  
   def initialize
-    @@songs << self
-  end
+    self.class.all << self
+  end 
 
   def self.all
     @@songs
@@ -25,4 +25,6 @@ class Song
   extend Memorable::ClassMethods
   extend Findable
   include Paramable
+  include Memorable::InstanceMethods
+  
 end
