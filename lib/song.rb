@@ -1,4 +1,5 @@
 require_relative '../lib/concerns/memorable'
+#require_relative '../lib/concerns/findable'
 require 'pry'
 
 class Song
@@ -12,9 +13,9 @@ class Song
     @@songs << self
   end
 
-  def self.find_by_name(name)
-    @@songs.detect{|a| a.name == name}
-  end
+#  def self.find_by_name(name)
+ #   @@songs.detect{|a| a.name == name}
+  #end
 
   def self.all
     @@songs
@@ -29,4 +30,5 @@ class Song
   end
   
   extend Memorable::ClassMethods
+  extend Findable
 end

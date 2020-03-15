@@ -1,4 +1,5 @@
 require_relative '../lib/concerns/memorable'
+#require_relative '../lib/concerns/findable'
 require 'pry'
 
 class Artist
@@ -35,5 +36,6 @@ class Artist
   end
   
   extend Memorable::ClassMethods
+  extend Findable
   
 end
