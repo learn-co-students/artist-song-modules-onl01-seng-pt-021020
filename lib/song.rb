@@ -1,4 +1,4 @@
-require_relative './memorable.rb'
+require_relative '../lib/concerns/memorable'
 require 'pry'
 
 class Song
@@ -36,5 +36,5 @@ class Song
     name.downcase.gsub(' ', '-')
   end
   
-  extend Memorable
+  extend Memorable::ClassMethods
 end
